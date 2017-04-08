@@ -1,0 +1,10 @@
+{"timestamp": 1491663435125,"action_data":{"action": "create_agent","timestamp": 1491663435125,"number": 1234,"name": "Jan Kowalski","amount": 20000.0}}
+{"timestamp": 1491663435215,"action_data":{"action": "create_agent","timestamp": 1491663435215,"number": 1235,"name": "Andrzej Nowak","amount": 2000.0}}
+{"timestamp":1491663435225,"action_data":{"action": "transfer","timestamp":1491663435225,"origin": 1234,"target": 1235,"amount": 10000.0,"title": "test transfer."}}
+{"timestamp":1491663535425,"action_data":{"action":"transfer","timestamp":1491663535425,"origin":1234,"target":1235,"amount":1000,"title":"Poprzednia"}}
+{"timestamp":1491664022630,"action_data":{"action":"transfer","timestamp":1491664022630,"origin":1234,"target":1235,"amount":1000,"title":"nowa"}}
+{"timestamp":1491664141533,"action_data":{"action":"transfer","timestamp":1491664141532,"origin":1234,"target":1235,"amount":2500,"title":"Tesujemy raz jeszcze!"}}
+{"timestamp":1491664193635,"action_data":{"action":"transfer","timestamp":1491664193635,"origin":1235,"target":1234,"amount":10000,"title":"Oddaję środki Janowi Kowalskiemu."}}
+{"timestamp":1491666915614,"action_data":{"action":"create_agent","timestamp":1491666915613,"number":1236,"name":"Testowy uzytkownik","amount":125000}}
+{"timestamp":1491666935794,"action_data":{"action":"transfer","timestamp":1491666935793,"origin":1236,"target":1234,"amount":5000,"title":"Nowy użytkownik wita się rozsyłając pieniądze!"}}
+{"timestamp":1491687393379,"action_data":{"action":"create_agent","timestamp":1491687393373,"number":1111,"name":"Jan","amount":10000}}

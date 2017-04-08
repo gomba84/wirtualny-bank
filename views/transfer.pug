@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        style
+            include style.css
+        title= title
+        link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheets")
+    body
+        div#content
+            h3 Transfer pieniężny
+            hr
+
+            h4 Dostępne środki: #{moneyAmount}
+            br
+
+            form(method='POST' action= moneySendUrl)
+                label Numer konta, na które zostaną wysłane środki
+                br
+                input(type='text' name='targetNumber' value=1235)
+                br
+                br
+                label Ilość środków, które zostaną wysłane
+                br
+                input(type='text' name='moneyAmount' value=1000)
+                br
+                br
+                label Tytuł płatności
+                br
+                input(type='text' name='title' value="Testowa płatność")
+                br
+                br
+                button(class="btnOperation" type="submit") Wykonaj transfer
+            
+            br
+            a(class="btnOperation" href="/dashboard") Wróc
+
+    include footer.pug

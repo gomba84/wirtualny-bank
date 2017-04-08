@@ -1,0 +1,54 @@
+doctype html
+html
+    head
+        style
+            include style.css
+        title= title
+        link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+    body
+        include header.pug
+        br
+        
+        - var alertMsg = { isAlert: alert != "", alert: alert }
+        if alertMsg.isAlert
+            h3.alertText= alertMsg.alert
+
+        div#content
+            h4 Zaloguj się
+            form(method='POST' action= loginUrl)
+                label Numer rachunku
+                br
+                input(type='text' name='loginNumber')
+                br
+                br
+                button(class="btnOperation" type='submit') Zaloguj
+            
+            br
+            p Lista użytkowników dostępnych w systemie:
+            ul
+                each user in users
+                    li= user.number
+
+            br
+            br
+
+            h4 Dodaj nowego użytkownika
+            form(method='POST' action= addUserUrl)
+                label Numer rachunku
+                br
+                input(type='text' name='number')
+                br
+                br
+                label Nazwa
+                br
+                input(type='text' name='name')
+                br
+                br
+                label Początkowe środki
+                br
+                input(type='text' name='amount')
+                br
+                br
+                button(class='btnOperation' type='submit') Dodaj
+
+    include footer.pug

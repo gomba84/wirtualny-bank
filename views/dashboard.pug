@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        style
+            include style.css
+        title= title
+        link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheets")
+    body
+        div#content
+            h2 Zalogowany jako: #{userName}
+            h4 Numer konta: #{bankNumber}
+            h4 Dostępne środki: #{moneyAmount}
+            hr
+
+            if transferAlert
+                h3.alertText= transferAlert
+
+            h4 Historia operacji
+
+            mixin historyObject(obj)
+                - var dataString = new Date(obj.timestamp).toString();
+                if obj.origin == bankNumber
+                    li!= dataString + ": <b>Wysłano</b> do " + obj.target + " środki " + obj.amount + "zł z tytułem: " + obj.title
+                else
+                    li!= dataString + ": <b>Otrzymano</b> od " + obj.origin + " środki " + obj.amount + "zł z tytułem: " + obj.title
+
+            if history
+                each val in history
+                    +historyObject(val)
+
+            br
+            br                
+
+            | Dostępne operacje:
+            br
+            br
+            a(class="btnOperation" href= transferLink) Transfer środków
+            br
+            br
+            a(class="btnOperation" href= logoutLink) Wyloguj
+    include footer.pug
